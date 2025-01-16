@@ -56,7 +56,9 @@ public class MainActivity extends AppCompatActivity {
 
                 if(checkInsertData==true){
                     Toast.makeText(MainActivity.this,"New Entry is Inserted",Toast.LENGTH_LONG).show();
-
+                    name.setText("");
+                    contact.setText("");
+                    dob.setText("");
                 }
                 else {
                     Toast.makeText(MainActivity.this,"New Entry is NOT Inserted",Toast.LENGTH_LONG).show();
@@ -116,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
                         buffer.append("Name : "+res.getString(0) +"\n");
                         buffer.append("Contact : "+res.getString(1) +"\n");
                         buffer.append("DOB : "+res.getString(2) +"\n");
+                        buffer.append("\n");
                     }
 
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -123,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
                     builder.setTitle("USER Entries");
                     builder.setMessage(buffer.toString());
                     builder.show();
-                    
+
                 }
 
 
